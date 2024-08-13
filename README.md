@@ -18,3 +18,10 @@ This hash function has two steps:
 
 The variable a should be a prime number larger than the size of the alphabet. We're hashing ASCII strings, which has an alphabet size of 128, so we should choose a prime larger than that.
 
+## Collisions
+Double Hashing
+The index that should be used after i collisions is given by:
+```
+index = hash_a(string) + i * (hash_b(string) + 1) % num_buckets`
+```
+
