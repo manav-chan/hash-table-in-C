@@ -9,6 +9,15 @@
 gcc -o ../build/test main.c map.c prime.c -lm
 ```
 
+## Introduction
+1. Implemented a map data structure which is an array of key-value pairs (both strng types) using hash table and hashing function.
+1. map data structure has the following functions.
+    - search(a, k): return the value v associated with key k from the associative array a, or NULL if the key does not exist.
+    - insert(a, k, v): store the pair k-v into the associative array a.
+    - delete(a, k): delete the k-v pair associated with k.
+1. Implemented Double Hashing for resolving collisions.
+
+
 ## Hash Function
 Generic string hashing function
 ```
@@ -31,6 +40,6 @@ This hash function has two steps:
 ### Double Hashing
 The index that should be used after `i` collisions is given by:
 ```
-index = hash_a(string) + i * (hash_b(string) + 1) % num_buckets`
+index = hash_a(string) + i * (hash_b(string) + 1) % num_buckets
 ```
 
