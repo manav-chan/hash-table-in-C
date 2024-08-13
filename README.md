@@ -16,7 +16,7 @@ gcc -o ../build/test main.c map.c prime.c -lm
     - insert(a, k, v): store the pair k-v into the associative array a.
     - delete(a, k): delete the k-v pair associated with k.
 1. Implemented Double Hashing for resolving collisions.
-
+1. Map is resized automatically according to the `load` of the map, which is defined as count of elements divided by the total size of map.
 
 ## Hash Function
 Generic string hashing function
@@ -42,4 +42,5 @@ The index that should be used after `i` collisions is given by:
 ```
 index = hash_a(string) + i * (hash_b(string) + 1) % num_buckets
 ```
+To prevent hash collisions from repeatedly targeting the same bucket, add 1 to the second hash result to ensure it's never 0.
 
