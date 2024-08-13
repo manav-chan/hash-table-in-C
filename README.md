@@ -27,8 +27,8 @@ This hash function has two steps:
 
 `a` should be a prime number larger than 128 as we are dealing with ASCII string type for keys.
 
-## Collisions
-Double Hashing
+## Collision Handling
+### Double Hashing
 The index that should be used after `i` collisions is given by:
 ```
 index = hash_a(string) + i * (hash_b(string) + 1) % num_buckets`
