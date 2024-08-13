@@ -1,1 +1,1 @@
-# hash-table-in-C
+# Hash Table (map) in C
