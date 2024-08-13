@@ -4,7 +4,7 @@
 ```terminal
 ./build/test
 ```
-- If changes are made to src code, run the following command to compile.
+- If changes are made to src, run the following command to compile.
 ```terminal
 gcc -o ../build/test main.c map.c prime.c -lm
 ```
