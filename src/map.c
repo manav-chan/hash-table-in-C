@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+#include <stdio.h>
 
 #include "map.h"
 #include "prime.h"
@@ -80,16 +82,26 @@ void map_del(map *mp)
             map_del_item(item);
         }
     }
-    free(mp->items);
-    free(mp);
+    if(mp->items != NULL) {
+        free(mp->items);
+    }
+    if(mp != NULL) {
+        free(mp);
+    }
 }
 
 // Free the memory for a map_item
 static void map_del_item(map_item *i)
 {
-    free(i->key);
-    free(i->value);
-    free(i);
+    if(i == NULL) {
+        return;
+    }
+    if (i->key != NULL) {
+        free(i->key);
+    }
+    if (i->value != NULL) {
+        free(i->value);
+    }
 }
 
 // Hash function
@@ -251,13 +263,13 @@ static void map_resize(map* mp, const int base_size)
     map_del(new_map);
 }
 
-
+// Increase the size of the map
 static void map_resize_up(map* mp) {
     const int new_size = mp->base_size * 2;
     map_resize(mp, new_size);
 }
 
-
+// Decrease the size of the map
 static void map_resize_down(map* mp) {
     const int new_size = mp->base_size / 2;
     map_resize(mp, new_size);
