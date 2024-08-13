@@ -10,7 +10,7 @@ gcc -o ../build/test main.c map.c prime.c -lm
 ```
 
 ## Introduction
-1. Implemented a map data structure which is an array of key-value pairs (both strng types) using hash table and hashing function.
+1. Implemented a map data structure which is an array of key-value pairs (string types) using hash table and hashing function.
 1. map data structure has the following functions.
     - search(a, k): return the value v associated with key k from the associative array a, or NULL if the key does not exist.
     - insert(a, k, v): store the pair k-v into the associative array a, updates value if finds key already present.
