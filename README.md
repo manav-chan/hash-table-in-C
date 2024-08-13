@@ -1,4 +1,13 @@
 # Hash Table (map) in C
+## Test
+- Run the following command to test the code.
+```terminal
+./build/test
+```
+- If changes are made to src code, run the following command to compile.
+```terminal
+gcc -o ../build/test main.c map.c prime.c -lm
+```
 
 ## Hash Function
 Generic string hashing function
@@ -14,13 +23,13 @@ function hash(string, a, num_buckets):
 This hash function has two steps:
 
 1. Convert the string to a large integer
-2. Reduce the size of the integer to a fixed range by taking its remainder mod m
+2. Integer mod m
 
-The variable a should be a prime number larger than the size of the alphabet. We're hashing ASCII strings, which has an alphabet size of 128, so we should choose a prime larger than that.
+`a` should be a prime number larger than 128 as we are dealing with ASCII string type for keys.
 
 ## Collisions
 Double Hashing
-The index that should be used after i collisions is given by:
+The index that should be used after `i` collisions is given by:
 ```
 index = hash_a(string) + i * (hash_b(string) + 1) % num_buckets`
 ```
